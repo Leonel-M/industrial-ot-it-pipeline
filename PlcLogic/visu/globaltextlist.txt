@@ -1,6 +1,0 @@
-﻿Id;Default
-813;ALARM
-7;Forzar alarma
-187;RESET
-0;START
-261;STOP
