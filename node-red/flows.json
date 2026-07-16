@@ -1,0 +1,762 @@
+[
+    {
+        "id": "058038b1a58f2cdd",
+        "type": "tab",
+        "label": "CODESYS LAMS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "26bee728dfb80d6e",
+        "type": "OpcUa-Client",
+        "z": "058038b1a58f2cdd",
+        "endpoint": "da33df40df91aeed",
+        "action": "subscribe",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": "200",
+        "timeUnit": "ms",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": false,
+        "name": "CODESYS SUBSCRIBE",
+        "applicationName": "",
+        "applicationUri": "",
+        "x": 710,
+        "y": 340,
+        "wires": [
+            [
+                "8282dd93aa125e4e",
+                "56324dcdda108b51"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7dad51fb54750be8",
+        "type": "debug",
+        "z": "058038b1a58f2cdd",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 955,
+        "y": 247,
+        "wires": [],
+        "icon": "font-awesome/fa-bug",
+        "l": false
+    },
+    {
+        "id": "8282dd93aa125e4e",
+        "type": "rbe",
+        "z": "058038b1a58f2cdd",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 895,
+        "y": 247,
+        "wires": [
+            [
+                "7dad51fb54750be8"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "2a79a1a59d51a12b",
+        "type": "OpcUa-Client",
+        "z": "058038b1a58f2cdd",
+        "endpoint": "da33df40df91aeed",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": false,
+        "name": "CODESYS WRITE",
+        "applicationName": "",
+        "applicationUri": "",
+        "x": 970,
+        "y": 560,
+        "wires": [
+            [
+                "5df5a903b9c5894b"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5df5a903b9c5894b",
+        "type": "debug",
+        "z": "058038b1a58f2cdd",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1159,
+        "y": 547,
+        "wires": [],
+        "icon": "font-awesome/fa-bug",
+        "l": false
+    },
+    {
+        "id": "ec60c8954d50e5fa",
+        "type": "OpcUa-Item",
+        "z": "058038b1a58f2cdd",
+        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Start_Button",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "Start Button",
+        "x": 730,
+        "y": 560,
+        "wires": [
+            [
+                "2a79a1a59d51a12b"
+            ]
+        ]
+    },
+    {
+        "id": "98d2bd281eeda093",
+        "type": "OpcUa-Item",
+        "z": "058038b1a58f2cdd",
+        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Belt_Speed_SP",
+        "datatype": "Float",
+        "value": "",
+        "name": "Belt Speed SP",
+        "x": 740,
+        "y": 700,
+        "wires": [
+            [
+                "2a79a1a59d51a12b"
+            ]
+        ]
+    },
+    {
+        "id": "a829713d13e0fa7d",
+        "type": "OpcUa-Item",
+        "z": "058038b1a58f2cdd",
+        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Stop_Button",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "Stop Button",
+        "x": 730,
+        "y": 600,
+        "wires": [
+            [
+                "2a79a1a59d51a12b"
+            ]
+        ]
+    },
+    {
+        "id": "789146695aea43fb",
+        "type": "OpcUa-Item",
+        "z": "058038b1a58f2cdd",
+        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Reset_Button",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "Reset Button",
+        "x": 730,
+        "y": 640,
+        "wires": [
+            [
+                "2a79a1a59d51a12b"
+            ]
+        ]
+    },
+    {
+        "id": "6c288e83219d6a4d",
+        "type": "inject",
+        "z": "058038b1a58f2cdd",
+        "name": "Alarm Active",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Alarm_Active",
+        "payload": "",
+        "payloadType": "date",
+        "x": 430,
+        "y": 421,
+        "wires": [
+            [
+                "26bee728dfb80d6e"
+            ]
+        ],
+        "icon": "node-red/trigger.svg"
+    },
+    {
+        "id": "0bf203a09c990cb8",
+        "type": "inject",
+        "z": "058038b1a58f2cdd",
+        "name": "Line State",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": ".1",
+        "topic": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Line_State",
+        "payload": "",
+        "payloadType": "date",
+        "x": 430,
+        "y": 301,
+        "wires": [
+            [
+                "26bee728dfb80d6e"
+            ]
+        ],
+        "icon": "node-red/trigger.svg"
+    },
+    {
+        "id": "4de9aa083d90c8a2",
+        "type": "inject",
+        "z": "058038b1a58f2cdd",
+        "name": "Belt Speed PV",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Belt_Speed_PV",
+        "payload": "",
+        "payloadType": "date",
+        "x": 440,
+        "y": 341,
+        "wires": [
+            [
+                "26bee728dfb80d6e"
+            ]
+        ],
+        "icon": "node-red/trigger.svg"
+    },
+    {
+        "id": "dad56f4073b8631d",
+        "type": "inject",
+        "z": "058038b1a58f2cdd",
+        "name": "Piece Count",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Piece_Count",
+        "payload": "",
+        "payloadType": "date",
+        "x": 430,
+        "y": 381,
+        "wires": [
+            [
+                "26bee728dfb80d6e"
+            ]
+        ],
+        "icon": "node-red/trigger.svg"
+    },
+    {
+        "id": "56324dcdda108b51",
+        "type": "switch",
+        "z": "058038b1a58f2cdd",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Line_State",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Belt_Speed_PV",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Piece_Count",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.Alarm_Active",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 951,
+        "y": 328,
+        "wires": [
+            [
+                "21cd2eadf8a84895",
+                "d1aff53025fd2310"
+            ],
+            [
+                "294b61d2a23f52b6"
+            ],
+            [
+                "10b3b6ed66526253"
+            ],
+            [
+                "28ed9b64f4a469ea"
+            ]
+        ]
+    },
+    {
+        "id": "b263e0c3c77da9cf",
+        "type": "ui_text",
+        "z": "058038b1a58f2cdd",
+        "group": "861c080d1a2b059b",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "name": "Line State",
+        "label": "Line State:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1360,
+        "y": 309,
+        "wires": []
+    },
+    {
+        "id": "294b61d2a23f52b6",
+        "type": "ui_gauge",
+        "z": "058038b1a58f2cdd",
+        "name": "Belt Speed PV",
+        "group": "861c080d1a2b059b",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Belt Speed PV",
+        "label": "units",
+        "format": "{{value | number:2}}",
+        "min": 0,
+        "max": "4",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1162,
+        "y": 349,
+        "wires": []
+    },
+    {
+        "id": "28ed9b64f4a469ea",
+        "type": "ui_led",
+        "z": "058038b1a58f2cdd",
+        "order": 4,
+        "group": "861c080d1a2b059b",
+        "width": 0,
+        "height": 0,
+        "label": "Alarm",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#000000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#ffff00",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Alarm",
+        "x": 1132,
+        "y": 429,
+        "wires": []
+    },
+    {
+        "id": "d8960840556bc454",
+        "type": "ui_button",
+        "z": "058038b1a58f2cdd",
+        "name": "",
+        "group": "986df25a50b806a6",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "START",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "green",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 500,
+        "y": 560,
+        "wires": [
+            [
+                "168648b704a33b92"
+            ]
+        ]
+    },
+    {
+        "id": "bcddca28225e588a",
+        "type": "ui_button",
+        "z": "058038b1a58f2cdd",
+        "name": "",
+        "group": "986df25a50b806a6",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "STOP",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "red",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 490,
+        "y": 600,
+        "wires": [
+            [
+                "ee9efe768cb5ebf9"
+            ]
+        ]
+    },
+    {
+        "id": "6f5057beb0c156bf",
+        "type": "ui_button",
+        "z": "058038b1a58f2cdd",
+        "name": "",
+        "group": "986df25a50b806a6",
+        "order": 4,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "RESET",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "blue",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 500,
+        "y": 640,
+        "wires": [
+            [
+                "a2ac0da4b4674a4a"
+            ]
+        ]
+    },
+    {
+        "id": "10b3b6ed66526253",
+        "type": "ui_text",
+        "z": "058038b1a58f2cdd",
+        "group": "861c080d1a2b059b",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "Piece Count",
+        "label": "Piece Count:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1153,
+        "y": 390,
+        "wires": []
+    },
+    {
+        "id": "168648b704a33b92",
+        "type": "trigger",
+        "z": "058038b1a58f2cdd",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 605,
+        "y": 560,
+        "wires": [
+            [
+                "ec60c8954d50e5fa"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "ee9efe768cb5ebf9",
+        "type": "trigger",
+        "z": "058038b1a58f2cdd",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 605,
+        "y": 600,
+        "wires": [
+            [
+                "a829713d13e0fa7d"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a2ac0da4b4674a4a",
+        "type": "trigger",
+        "z": "058038b1a58f2cdd",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 605,
+        "y": 640,
+        "wires": [
+            [
+                "789146695aea43fb"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "21cd2eadf8a84895",
+        "type": "function",
+        "z": "058038b1a58f2cdd",
+        "name": "Line State States",
+        "func": "const estados = { 0: \"Idle\", 1: \"Run\", 2: \"Alarm\", 3: \"Stop\" };\nmsg.payload = estados[msg.payload] ?? \"Desconocido\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 309,
+        "wires": [
+            [
+                "b263e0c3c77da9cf"
+            ]
+        ]
+    },
+    {
+        "id": "d1aff53025fd2310",
+        "type": "ui_led",
+        "z": "058038b1a58f2cdd",
+        "order": 2,
+        "group": "861c080d1a2b059b",
+        "width": 1,
+        "height": 1,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#000000",
+                "value": "0",
+                "valueType": "num"
+            },
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ffff00",
+                "value": "2",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "3",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1130,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "994774e05a882337",
+        "type": "ui_spacer",
+        "z": "058038b1a58f2cdd",
+        "name": "spacer",
+        "group": "986df25a50b806a6",
+        "order": 1,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "da33df40df91aeed",
+        "type": "OpcUa-Endpoint",
+        "name": "CODESYS-LAMS",
+        "endpoint": "opc.tcp://LAMS:4840",
+        "secpol": "Basic256Sha256",
+        "secmode": "Sign",
+        "none": false,
+        "login": true,
+        "usercert": false,
+        "usercertificate": "LAMS",
+        "userprivatekey": ""
+    },
+    {
+        "id": "861c080d1a2b059b",
+        "type": "ui_group",
+        "name": "System Status",
+        "tab": "20424fb5c3aea2e9",
+        "order": 2,
+        "disp": true,
+        "width": 5,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "986df25a50b806a6",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "20424fb5c3aea2e9",
+        "order": 1,
+        "disp": true,
+        "width": 2,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "20424fb5c3aea2e9",
+        "type": "ui_tab",
+        "name": "Line Watch",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f4088ad3c83f19ac",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-opcua": "0.2.354",
+            "node-red-dashboard": "3.6.6",
+            "node-red-contrib-ui-led": "0.4.11"
+        }
+    }
+]
