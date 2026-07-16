@@ -1,0 +1,8 @@
+# CODESYS - artefactos locales/build, no versionar
+codesys/*.opt
+codesys/*.bootinfo
+codesys/*.bootinfo_guids
+codesys/*.compileinfo
+codesys/*.~u
+codesys/*_RECOVERED_*.project
+codesys/*_project.precompilecache
