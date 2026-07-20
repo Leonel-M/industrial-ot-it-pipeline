@@ -6,3 +6,9 @@ codesys/*.compileinfo
 codesys/*.~u
 codesys/*_RECOVERED_*.project
 codesys/*_project.precompilecache
+python/venv/
+python/certs/
+python/data/*.db
+__pycache__/
+*.pyc
+.env
